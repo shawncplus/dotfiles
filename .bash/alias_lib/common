@@ -1,0 +1,14 @@
+# common aliases
+
+alias clear='echo -e "\e[2J"'
+alias ls='ls --color=always'
+alias lf='ls -Arthop'
+alias l='lf'
+alias nl="nl -ba"
+
+alias p='pushd'
+alias o='popd'
+alias d='dirs'
+alias less='less -R'
+
+# vim: set syn=sh :

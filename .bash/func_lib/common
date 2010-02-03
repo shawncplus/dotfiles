@@ -1,0 +1,17 @@
+# common functions
+hsearch() { history | grep $1; }
+
+function phpstrict() {
+	if [ "$1" != "" ]
+	then
+		'php' -d error_reporting=2048 -f $1
+	else
+		echo "Usage: phpstrict <file>"
+	fi
+}
+
+function cdl() {
+	'cd' $1
+	'ls' -Ahlrtp --color=always
+}
+# vim: set syn=sh :

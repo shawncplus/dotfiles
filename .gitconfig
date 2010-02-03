@@ -1,0 +1,13 @@
+[user]
+  name = sbiddle
+  email = sbiddle@synacor.com
+[diff]
+  external = git_diff_wrapper
+[pager]
+  diff =
+[color]
+  ui = auto
+[alias]
+  st = status -a
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
+# vim: set et :
