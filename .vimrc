@@ -1,8 +1,9 @@
-"============== General Settings ==============="
+"============== General Settings ===============
 set dict=/usr/share/dict/words
 set cursorline
 set showcmd
 set ruler
+set incsearch
 set wildmenu
 syntax enable
 set synmaxcol=0
@@ -11,6 +12,10 @@ set display=uhex
 set shortmess=aAIsT
 set cmdheight=2
 set nowrap
+if &diff
+	set wrap
+endif
+
 set completeopt=menu
 set mousemodel=popup
 set backspace=2
@@ -32,23 +37,20 @@ set wrap
 
 set tags=~/.vim/tags/tags
 
-"============== Force myself to use hjkl"
-"noremap OA <Nop>
-"noremap OD <Nop>
-"noremap OC <Nop>
-"noremap OB <Nop>
-"
-"inoremap OA <Nop>
-"inoremap OD <Nop>
-"inoremap OC <Nop>
-"inoremap OB <Nop>
-"
-"vnoremap OA <Nop>
-"vnoremap OD <Nop>
-"vnoremap OC <Nop>
-"vnoremap OB <Nop>
+no <down> ddp
+no <left> <Nop>
+no <right> <Nop>
+no <up> ddkP
+ino <down> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+ino <up> <Nop>
+vno <down> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+vno <up> <Nop>
 
-"============== Color Settings ==============="
+"============== Color Settings ===============
 "color wombat256
 "color xterm16
 "color railscasts
@@ -56,12 +58,12 @@ set tags=~/.vim/tags/tags
 color skittles_dark
 
 
-"============== Custom scripts ==============="
+"============== Custom scripts ===============
 source ~/.vim/after/syntaxcheck.vim
 source ~/.vim/after/dbsettings.vim
 
 
-"============== Filetype stuff ==============="
+"============== Filetype stuff ===============
 filetype plugin on
 filetype indent on
 
@@ -72,65 +74,71 @@ autocmd FileType yaml :match yamlTab /\t\+/
 autocmd FileType yaml autocmd BufWritePre <buffer> :call CheckTabs()
 
 " PHP Stuff
-autocmd FileType php let php_folding = 0
+autocmd FileType php let php_folding = 1
 autocmd FileType php let php_noShortTags = 1
 autocmd FileType php let php_parent_error_close = 1
 autocmd FileType php let php_parent_error_open = 1
 autocmd FileType php let php_large_files = 0
 
 " comment selected lines
-autocmd FileType yaml noremap <F5> :s/^/#/
-autocmd FileType yaml noremap <F6> :s/^#//
-autocmd FileType php,c,cpp noremap <F5> :s+^+//+
-autocmd FileType php,c,cpp noremap <F6> :s+^//++
-autocmd FileType vim noremap <F5> :s/^/"/
-autocmd FileType vim noremap <F6> :s/^"//
+autocmd FileType yaml noremap <F5> :s/^/#/<CR>
+autocmd FileType yaml noremap <F6> :s/^#//<CR>
+autocmd FileType php,c,cpp noremap <F5> :s+^+//+<CR>
+autocmd FileType php,c,cpp noremap <F6> :s+^//++<CR>
+autocmd FileType vim noremap <F5> :s/^/"/<CR>
+autocmd FileType vim noremap <F6> :s/^"//<CR>
 
 " firebug fb(), FirePHP, and console.log
-autocmd FileType php noremap \fb :silent! exe "s/$/\rfb(" . expand('<cword>') . ", '" . expand('<cword>') . "');/e" \| silent! exe "noh"
-autocmd FileType php noremap \ft :call append(line('.'), 'FirePHP::getInstance(true)->trace(__FUNCTION__);')
-autocmd FileType javascript noremap <F4> :silent exe "s/\\v^(\\s*)(.+)$/\\1\\2\r\\1console.log(" . expand('<cword>') . ", '" . expand('<cword>') . "');"
+autocmd FileType php noremap \fb :silent! exe "s/$/\rfb(" . expand('<cword>') . ", '" . expand('<cword>') . "');/e" \| silent! exe "noh"<CR>
+autocmd FileType php noremap \ft :call append(line('.'), 'FirePHP::getInstance(true)->trace(__FUNCTION__);')<CR>
+autocmd FileType javascript noremap <F4> :silent exe "s/\\v^(\\s*)(.+)$/\\1\\2\r\\1console.log(" . expand('<cword>') . ", '" . expand('<cword>') . "');"<CR>
+
+autocmd FileType php set kp=phpdoc
+
+"============== Custom Mappings ===============
+" general mapping
+nmap <C-Tab> :tabnext<CR>
+nmap <C-S-Tab> :tabprevious<CR>
+map <C-S-Tab> :tabprevious<CR>
+map <C-Tab> :tabnext<CR>
+imap <C-S-Tab> <ESC>:tabprevious<CR>
+imap <C-Tab> <ESC>:tabnext<CR>
+noremap <F7> :set expandtab!<CR>
+
+"custom comma motion mapping
+nmap di, f,dT,
+nmap ci, f,cT,
+nmap da, f,ld2F,i,<ESC>l "delete argument 
+nmap ca, f,ld2F,i,<ESC>a "delete arg and insert
 
 
-"============== Custom Mappings ==============="
-nmap  :!php --rf <cword>
-nmap  :q!
-nmap <C-Tab> :tabnext
-nmap <C-S-Tab> :tabprevious
-map <C-S-Tab> :tabprevious
-map <C-Tab> :tabnext
-imap <C-S-Tab> :tabprevious
-imap <C-Tab> :tabnext
-noremap  :promptfind
-vnoremap  :promptfind
-inoremap  :promptfind
-noremap  :undo
-vnoremap  :undo
-inoremap  :undo
-noremap  :redo
-vnoremap  :redo
-inoremap  :redo
-noremap  :update
-vnoremap  :update
-inoremap  :update
-
-noremap  :VCSVimDiff
-vnoremap  :VCSVimDiff
-inoremap  :VCSVimDiff
-noremap  :VCSGotoOriginal!
-vnoremap  :VCSGotoOriginal!
-inoremap  :VCSGotoOriginal!
-noremap <F7> :set expandtab!
-
-" Give a shortcut for the blackhole buffer
-map  "_
 nmap g^ g~iW
+
+" diff
+nmap ]c ]czz
+nmap [c [czz
+
+" default to very magic
+no / /\v
+
+" gO to create a new line below cursor in normal mode
+nmap gO o<ESC>k
+" g<Ctrl+o> to create a new line above cursor (Ctrl to prevent collision with 'go' command)
+nmap g<C-O> O<ESC>j
+
+"I really hate that things don't auto-center
+nmap G Gzz
+nmap n nzz
+nmap N Nzz
+
+" php
+nmap  :!php --rf <cword><CR>
 
 "open tag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 
-"============== Script configs ==============="
+"============== Script configs ===============
 let VCSCommandSplit = 'vertical'
 
 let Tlist_Compact_Format = 0
@@ -151,12 +159,12 @@ let g:php_alt_construct_parents=1
 let g:SuperTabDefaultCompletionType = ""
 
 
-"============== Custom Menu Items (GUI Only) ==============="
-autocmd FileType php menu Syntax.PHP.Check :call CheckPHPSyntax()
-autocmd FileType php menu Format.Whitespace.Concatenation :%s/\([^\. ]\)\.\([^\. ]*\)\.\([^\. ]\)/\=submatch(1).' . '.submatch(2).' . '.submatch(3)/g
+"============== Custom Menu Items (GUI Only) ===============
+autocmd FileType php menu Syntax.PHP.Check :call CheckPHPSyntax()<CR>
+autocmd FileType php menu Format.Whitespace.Concatenation :%s/\([^\. ]\)\.\([^\. ]*\)\.\([^\. ]\)/\=submatch(1).' . '.submatch(2).' . '.submatch(3)/g<CR>
 
 
-"============== Custom Functions ==============="
+"============== Custom Functions ===============
 fun! Format_WhiteSpace_RemoveTrailing()
 	:%s/\v\s*$//g
 endfun
@@ -196,7 +204,7 @@ fun! s:Sinit(filen)
 endfun
 
 
-"============== Custom Commands ==============="
+"============== Custom Commands ===============
 command -nargs=0 Sinit :call <SID>Sinit('%:p:h')
 command -nargs=? W :w <args>
 augroup AutoMkdir
@@ -205,3 +213,5 @@ augroup AutoMkdir
 augroup END
 
 command -nargs=? Qa :qa
+
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
