@@ -37,6 +37,11 @@ set wrap
 
 set tags=~/.vim/tags/tags
 
+if version > 720
+	set undofile
+	set undodir=~/vimundo/
+endif
+
 no <down> ddp
 no <left> <Nop>
 no <right> <Nop>
