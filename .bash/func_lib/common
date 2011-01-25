@@ -1,5 +1,5 @@
 # common functions
-hsearch() { history | grep $1; }
+hsearch() { history | grep $1 | grep -v hsearch; }
 
 function phpstrict() {
 	if [ "$1" != "" ]

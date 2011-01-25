@@ -27,15 +27,19 @@ set shiftwidth=4
 
 set linespace=0
 set history=1000
-set list listchars=tab:» ,trail:-,extends:>,precedes:<
+set list listchars=tab:› ,trail:-,extends:>,precedes:<
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
 set ffs=unix
 set mouse=a
+set vb
+set ttym=xterm2
 
 set wrap
 
 set tags=~/.vim/tags/tags
+set undofile
+set undodir=~/vimundo/
 
 no <down> ddp
 no <left> <Nop>

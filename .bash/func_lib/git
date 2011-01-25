@@ -1,7 +1,10 @@
 # git functions
 function gdm() {
 	pwd
-	git diff master... --name-status | sed -e 's/^/	/'
+	git diff master... --name-status | \
+		sed -e "s/^A/ [1;32m+ [0m/" | \
+		sed -e "s/^M/ [1;33m∆ [0m/" | \
+		sed -e "s/^D/ [1;31m- [0m/"
 }
 
 
@@ -9,19 +12,4 @@ function mdiff() {
 	git diff master... $1
 }
 
-function gcq() {
-	if [ "$1" == "" ]
-	then
-		pwd
-		git log -1 --oneline --name-status | sed -e 's/^/	/'
-		return
-	fi
-
-	if `git branch | grep -q cq$1`
-	then
-		git checkout cq$1
-	else
-		git checkout -b cq$1
-	fi
-}
 # vim: set syn=sh :
