@@ -38,8 +38,6 @@ set ttym=xterm2
 set wrap
 
 set tags=~/.vim/tags/tags
-set undofile
-set undodir=~/vimundo/
 
 if version > 720
 	set undofile
