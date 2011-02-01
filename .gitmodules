@@ -4,3 +4,12 @@
 [submodule ".vim/bundle/phpcomplete.vim"]
 	path = .vim/bundle/phpcomplete.vim
 	url = git://github.com/vim-scripts/phpcomplete.vim.git
+[submodule ".vim/bundle/zencoding.vim"]
+	path = .vim/bundle/zencoding.vim
+	url = git://github.com/vim-scripts/ZenCoding.vim.git
+[submodule ".vim/bundle/NERDtree"]
+	path = .vim/bundle/NERDtree
+	url = https://github.com/vim-scripts/The-NERD-tree.git
+[submodule ".vim/bundle/vcscommand.vim"]
+	path = .vim/bundle/vcscommand.vim
+	url = https://github.com/vim-scripts/vcscommand.vim.git
