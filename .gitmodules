@@ -1,0 +1,6 @@
+[submodule ".vim/bundle/Conque-Shell"]
+	path = .vim/bundle/Conque-Shell
+	url = git://github.com/vim-scripts/Conque-Shell.git
+[submodule ".vim/bundle/phpcomplete.vim"]
+	path = .vim/bundle/phpcomplete.vim
+	url = git://github.com/vim-scripts/phpcomplete.vim.git

@@ -57,6 +57,9 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
+"Pathogen
+call pathogen#runtime_append_all_bundles()
+
 "============== Color Settings ===============
 "color wombat256
 "color xterm16
@@ -67,7 +70,6 @@ color skittles_dark
 
 "============== Custom scripts ===============
 source ~/.vim/after/syntaxcheck.vim
-source ~/.vim/after/dbsettings.vim
 
 
 "============== Filetype stuff ===============
