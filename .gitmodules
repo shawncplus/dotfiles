@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/vcscommand.vim"]
 	path = .vim/bundle/vcscommand.vim
 	url = https://github.com/vim-scripts/vcscommand.vim.git
+[submodule ".vim/bundle/PreciseJump.vim"]
+	path = .vim/bundle/PreciseJump.vim
+	url = git://github.com/vim-scripts/PreciseJump.git
