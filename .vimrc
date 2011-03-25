@@ -120,6 +120,9 @@ nmap ci, f,cT,
 nmap da, f,ld2F,i,<ESC>l "delete argument 
 nmap ca, f,ld2F,i,<ESC>a "delete arg and insert
 
+nmap cu ct_
+nmap cU cf_
+
 
 nmap g^ g~iW
 

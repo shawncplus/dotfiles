@@ -100,7 +100,9 @@ endif
 hi Statement guifg=#C01414 ctermfg=1 gui=none
 "hi Statement guifg=#CF1020 ctermfg=1 gui=none
 "gui=italic
-hi StatusLine guifg=#455354 ctermfg=0 guibg=fg
+hi clear StatusLine
+hi link StatusLine NonText
+"StatusLine guifg=#455354 ctermfg=0 guibg=fg
 hi StatusLineNC guifg=#808080 ctermfg=244 guibg=#080808 ctermbg=0
 hi StorageClass guifg=#FD971F ctermfg=208
 "gui=italic
@@ -129,7 +131,7 @@ hi WildMenu guifg=#66D9EF ctermfg=81 guibg=#121212 ctermbg=233
 hi Normal guifg=#F8F8F2 ctermfg=248 guibg=#000000 ctermbg=0
 hi Comment guifg=#5D8D8F ctermfg=66 gui=none
 "gui=italic
-hi CursorLine guibg=#121212 ctermbg=233
+hi CursorLine guibg=#121212 ctermbg=233 cterm=none
 hi CursorColumn guibg=#121212 ctermbg=233
 hi LineNr guifg=#FFFFFF ctermfg=15 guibg=#000000 ctermbg=0 gui=underline
 hi NonText guifg=#BCBCBC ctermfg=250 guibg=#232526 ctermbg=235
