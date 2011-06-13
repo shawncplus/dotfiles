@@ -16,3 +16,9 @@
 [submodule ".vim/bundle/easymotion.git"]
 	path = .vim/bundle/easymotion.git
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/gitv.git"]
+	path = .vim/bundle/gitv.git
+	url = https://github.com/gregsexton/gitv.git
+[submodule ".vim/bundle/fugitive.vim"]
+	path = .vim/bundle/fugitive.vim
+	url = https://github.com/tpope/vim-fugitive.git

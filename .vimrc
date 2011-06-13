@@ -24,6 +24,7 @@ set number
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+set foldcolumn=4
 
 set linespace=0
 set history=1000
@@ -90,9 +91,9 @@ set list listchars=tab:› ,trail:-,extends:>,precedes:<
 	" }}}
 	" Default statusline {{{
 		let g:default_stl  = ""
-		let g:default_stl .= "<CUR>#[Mode] %{&paste ? 'PASTE  ' : ''}%{substitute(mode(), '', '', 'g')} #[ModeS] </CUR>"
+		let g:default_stl .= "<CUR>#[Mode] %{&paste ? 'PASTE  ' : ''}%{substitute(mode(), '', '', 'g')} #[ModeS]</CUR>"
 		let g:default_stl .= "#[ModFlag]%{&readonly ? 'RO ' : ''}" " RO flag
-		let g:default_stl .= "#[FileName]%t " " File name
+		let g:default_stl .= " #[FileName]%t " " File name
 		let g:default_stl .= "#[ModFlag]%(%M %)" " Modified flag
 		let g:default_stl .= "#[BufFlag]%(%H%W %)" " HLP,PRV flags
 		let g:default_stl .= "#[FileNameS] " " Separator
@@ -307,6 +308,12 @@ nmap  :!php --rf <cword><CR>
 
 "open tag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+"quick pairs
+imap <leader>' ''<ESC>i
+imap <leader>" ""<ESC>i
+imap <leader>( ()<ESC>i
+imap <leader>[ []<ESC>i
 
 
 "============== Script configs ===============
