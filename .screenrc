@@ -1,0 +1,26 @@
+termcapinfo xterm* ti@:te@
+
+vbell off
+startup_message off
+autodetach on
+altscreen on
+defscrollback 99999
+defutf8 on
+#utf8 on on
+nonblock on
+#term screen-256color
+
+# # allow bold colors - necessary for some reason
+attrcolor b ".I"
+# # tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# # erase background with current bg color
+defbce "on"
+
+
+hardstatus alwayslastline "%{=b cW} %H %{= kK} %= %?%-Lw%?%{= kw}%n*%f %t%>%{= kK}%?%?%?%+Lw%?%?%>%= %{= cW} %m/%d %{= Ck} %c %{w}%{w}"
+
+# PuTTY fucking sucks so I can't use these
+bindkey "^[[27;5;9~" next               # Ctrl-Tab
+bindkey "^[[27;6;9~" prev               # Ctrl-Shift-Tab
+bindkey "[24~" eval "screen" "title" "focus"
