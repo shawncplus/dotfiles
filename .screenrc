@@ -17,8 +17,8 @@ termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 # # erase background with current bg color
 defbce "on"
 
-
-hardstatus alwayslastline "%{=b cW} %H %{= kK} %= %?%-Lw%?%{= kw}%n*%f %t%>%{= kK}%?%?%?%+Lw%?%?%>%= %{= cW} %m/%d %{= Ck} %c %{w}%{w}"
+#Note that the %<num>G token is only possible through my 256 color patch (github.com/shawncplus/patches)
+hardstatus alwayslastline "%{=b k}%214G %H %{=b W}%240G       %0G%{= w}%236G %= %?%-Lw%?%{= w}%236G%n%{= R}*%{-}%f %t%>%{= w}%236G%?%?%?%+Lw%?%?%>%= %{= cW} %m/%d %{= Ck} %c %{w}%{w}"
 
 # PuTTY fucking sucks so I can't use these
 bindkey "^[[27;5;9~" next               # Ctrl-Tab
