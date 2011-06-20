@@ -1,4 +1,4 @@
-termcapinfo xterm* ti@:te@
+wtermcapinfo xterm* ti@:te@
 
 vbell off
 startup_message off
@@ -18,7 +18,7 @@ termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce "on"
 
 #Note that the %<num>G and %<num>B tokens are only possible through my 256 color patch (github.com/shawncplus/patches)
-hardstatus alwayslastline "%{=b}%214B%16G %H %240B%230G       %{-b}%236B%250G %= %?%-Lw%?%{= w}%236B%n%196G+%250G %t%>%250G%236B%?%?%?%+Lw%?%?%>%= %31B%117G %m/%d %{=b}%117B%23G%c "
+hardstatus alwayslastline "%{=b}%214B%16G %H %{-b}%236B%250G %= %?%-Lw%?%{=b w}%240B%230G%t%{-b}%>%250G%236B%?%?%?%+Lw%?%?%>%= %31B%117G %m/%d %{=b}%117B%23G %c "
 
 # PuTTY fucking sucks so I can't use these
 bindkey "^[[27;5;9~" next               # Ctrl-Tab
