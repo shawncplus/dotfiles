@@ -21,14 +21,17 @@ set mousemodel=popup
 set backspace=2
 set number
 
+set enc=utf-8
+set fillchars=vert:¦
+
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
-set foldcolumn=4
+set foldcolumn=1
 
 set linespace=0
 set history=1000
-set list listchars=tab:› ,trail:-,extends:>,precedes:<
+set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
 
 " Statusline {{{
 	" Functions {{{
@@ -282,7 +285,6 @@ nmap ca, f,ld2F,i,<ESC>a "delete arg and insert
 
 nmap cu ct_
 nmap cU cf_
-
 
 nmap g^ g~iW
 

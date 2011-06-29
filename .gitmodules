@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/fugitive.vim"]
 	path = .vim/bundle/fugitive.vim
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/threesome.vim"]
+	path = .vim/bundle/threesome.vim
+	url = https://github.com/sjl/threesome.vim

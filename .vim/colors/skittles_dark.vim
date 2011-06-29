@@ -60,6 +60,8 @@ hi Macro guifg=#C4BE89 ctermfg=180
 "gui=italic
 hi SpecialKey guifg=#222222 ctermfg=235
 "gui=italic
+hi clear VertSplit
+hi link VertSplit SpecialKey
 
 
 hi MatchParen guifg=#000000 ctermfg=0 guibg=#FD971F ctermbg=208
@@ -120,7 +122,6 @@ hi Typedef guifg=#66D9EF ctermfg=81
 hi Type guifg=#66D9EF ctermfg=81 gui=none
 hi Underlined guifg=#808080 ctermfg=244 gui=underline
 
-hi VertSplit guifg=#808080 ctermfg=244 guibg=#080808 ctermbg=0
 "gui=bold
 hi VisualNOS guibg=#403D3D ctermbg=237
 hi Visual guibg=#403D3D ctermbg=237
@@ -134,7 +135,9 @@ hi Comment guifg=#5D8D8F ctermfg=66 gui=none
 hi CursorLine guibg=#121212 ctermbg=233 cterm=none
 hi CursorColumn guibg=#121212 ctermbg=233
 hi LineNr guifg=#FFFFFF ctermfg=15 guibg=#000000 ctermbg=0 gui=underline
-hi NonText guifg=#BCBCBC ctermfg=250 guibg=#232526 ctermbg=235
+"hi NonText guifg=#BCBCBC ctermfg=250 guibg=#232526 ctermbg=235
+hi clear NonText
+hi link NonText SpecialKey
 
 hi link xmlTagName Define
 
