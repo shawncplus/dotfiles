@@ -33,6 +33,8 @@ set linespace=0
 set history=1000
 set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
 
+let mapleader='\'
+
 " Statusline {{{
 	" Functions {{{
 		" Statusline updater {{{
@@ -283,10 +285,24 @@ nmap ci, f,cT,
 nmap da, f,ld2F,i,<ESC>l "delete argument 
 nmap ca, f,ld2F,i,<ESC>a "delete arg and insert
 
+" delete surrounding characters
+noremap ds{ F{xf}x
+noremap cs{ F{xf}xi
+noremap ds" F"x,x
+noremap cs" F"x,xi
+noremap ds' F'x,x
+noremap cs' F'x,xi
+noremap ds( F(xf)x
+noremap cs( F(xf)xi
+noremap ds) F(xf)x
+noremap cs) F(xf)xi
+
 nmap cu ct_
 nmap cU cf_
 
-nmap g^ g~iW
+" upper or lowercase the current word
+nmap g^ gUiW
+nmap gv guiW
 
 " diff
 nmap ]c ]czz
@@ -304,9 +320,8 @@ nmap g<C-O> O<ESC>j
 nmap G Gzz
 nmap n nzz
 nmap N Nzz
-
-" php
-nmap  :!php --rf <cword><CR>
+nmap } }zz
+nmap { {zz
 
 "open tag in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -389,7 +404,7 @@ command -nargs=0 Sinit :call <SID>Sinit('%:p:h')
 command -nargs=? W :w <args>
 augroup AutoMkdir
 	autocmd!
-	autocmd  BufNewFile  *  :call EnsureDirExists()
+	autocmd  BufWritePre  *  :call EnsureDirExists()
 augroup END
 
 command -nargs=? Qa :qa
