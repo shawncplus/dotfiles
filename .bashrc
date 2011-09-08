@@ -20,8 +20,12 @@ if [ -f /home/${USER}/.bash/aliases ]; then
 	. /home/${USER}/.bash/aliases
 fi
 
+export PATH=$PATH":/home/${USER}/bin/"
+
 # Ye olde prompt
 #uses gitprompt.pl (github.com/mikecanz/env)
+#export PS0='\[[38;5;202m\]\u\[[37m\] in \[[38;5;107m\]\w\[[37m\] on \[[38;5;1m\]\h\[[37m\]%{ at \[\e[38;5;25m\]%b%c%u%f%t %} \e[0m'
+#export PROMPT_COMMAND='export PS1=$(gitprompt.pl c=%[%e[34m u=%[%e[33m f=%[%e[38\;5\;15m statuscount=1)'
 export PS0='\[[38;5;202m\]\u\[[37m\] in \[[38;5;107m\]\w\[[37m\] on \[[38;5;1m\]\h\[[37m\]%{ at \[\e[38;5;25m\]%b%c%u%f%t\[\e[0m\]%} - '
 export PROMPT_COMMAND=$PROMPT_COMMAND';export PS1=$(gitprompt.pl c=%[%e[38\;5\;10m u=%[%e[33m f=%[%e[38\;5\;15m statuscount=1)'
 

@@ -14,4 +14,10 @@ function cdl() {
 	'cd' $1
 	'ls' -Ahlrtp --color=always
 }
+
+function mkcd()
+{
+	'mkdir' $*
+	'cd' ${@: -1}
+}
 # vim: set syn=sh :
