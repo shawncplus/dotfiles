@@ -11,7 +11,6 @@ alias o='popd'
 alias d='dirs'
 alias less='less -R'
 
-alias mounthp='sudo mount -tntfs /dev/sda2 /media/HP/'
 
 alias follow=". ~/bin/follow"
 # vim: set syn=sh :
