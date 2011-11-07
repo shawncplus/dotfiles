@@ -20,6 +20,7 @@ set completeopt=menu
 set mousemodel=popup
 set backspace=2
 set number
+set nocompatible
 
 set enc=utf-8
 set fillchars=vert:¦
@@ -229,8 +230,8 @@ call pathogen#runtime_append_all_bundles()
 "color wombat256
 "color xterm16
 "color railscasts
-"color molokai
-color skittles_dark
+color molokai
+"color skittles_dark
 
 
 "============== Custom scripts ===============
@@ -312,9 +313,9 @@ nmap [c [czz
 no / /\v
 
 " gO to create a new line below cursor in normal mode
-nmap gO o<ESC>k
+nmap g<C-O> o<ESC>k
 " g<Ctrl+o> to create a new line above cursor (Ctrl to prevent collision with 'go' command)
-nmap g<C-O> O<ESC>j
+nmap gO O<ESC>j
 
 "I really hate that things don't auto-center
 nmap G Gzz
@@ -352,6 +353,9 @@ let g:php_smart_semicolon=1
 let g:php_alt_construct_parents=1
 
 let g:SuperTabDefaultCompletionType = ""
+
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
 
 
 "============== Custom Menu Items (GUI Only) ===============

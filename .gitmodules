@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/threesome.vim"]
 	path = .vim/bundle/threesome.vim
 	url = https://github.com/sjl/threesome.vim
+[submodule ".vim/bundle/NERDtree.git"]
+	path = .vim/bundle/NERDtree.git
+	url = https://github.com/scrooloose/nerdtree.git

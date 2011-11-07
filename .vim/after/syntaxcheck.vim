@@ -22,7 +22,7 @@ endfun
 autocmd FileType php autocmd BufWritePost <buffer> :call CheckPHPSyntax()
 " CTRL+L checks syntax on the file
 "autocmd FileType php noremap  :!/usr/bin/php -l % 
-autocmd FileType php noremap  :call CheckPHPSyntax() 
+"autocmd FileType php noremap  :call CheckPHPSyntax() 
 
 
 " JavasScript awesomeness
