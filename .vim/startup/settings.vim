@@ -15,6 +15,7 @@ set nowrap
 if &diff
 	set wrap
 endif
+let &scrolloff=999-&scrolloff
 
 set completeopt=menu
 set mousemodel=popup
@@ -29,6 +30,7 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set foldcolumn=1
+set cc=+1,+2
 
 set linespace=0
 set history=1000
@@ -50,4 +52,13 @@ if version > 720
 endif
 
 let mapleader='\'
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
+let g:Powerline_symbols = 'fancy'
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')

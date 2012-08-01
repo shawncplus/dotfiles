@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/powerline.git"]
 	path = .vim/bundle/powerline.git
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/skittles_berry.git"]
+	path = .vim/bundle/skittles_berry.git
+	url = git://github.com/shawncplus/skittles_berry.git

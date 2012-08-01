@@ -4,6 +4,4 @@
 "color railscasts
 "color molokai
 "color skittles_dark
-color badwolf
-
-
+color skittles_berry

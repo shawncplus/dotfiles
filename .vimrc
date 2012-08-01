@@ -26,3 +26,7 @@ source ~/.vim/startup/js.vim
 source ~/.vim/startup/php.vim
 source ~/.vim/startup/vim.vim
 source ~/.vim/startup/yaml.vim
+
+if &diff
+	color skittles_dark
+endif
