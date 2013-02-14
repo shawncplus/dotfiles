@@ -1,0 +1,2 @@
+#!/bin/sh
+screen -S $STY -X at '#' stuff "$*"
