@@ -22,13 +22,12 @@ fi
 
 export PATH=$PATH":/home/${USER}/bin/"
 
-# Ye olde prompt
-#uses gitprompt.pl (github.com/mikecanz/env)
-#export PS0='\[[38;5;202m\]\u\[[37m\] in \[[38;5;107m\]\w\[[37m\] on \[[38;5;1m\]\h\[[37m\]%{ at \[\e[38;5;25m\]%b%c%u%f%t %} \e[0m'
-#export PROMPT_COMMAND='export PS1=$(gitprompt.pl c=%[%e[34m u=%[%e[33m f=%[%e[38\;5\;15m statuscount=1)'
-#export PS0='\[[38;5;202m\]\u\[[37m\] in \[[38;5;107m\]\w\[[37m\] on \[[38;5;1m\]\h\[[37m\]%{ at \[\e[38;5;25m\]%b%c%u%f%t\[\e[0m\]%} - '
-#export PROMPT_COMMAND=$PROMPT_COMMAND'export PS1=$(gitprompt.pl c=%[%e[38\;5\;10m u=%[%e[33m f=%[%e[38\;5\;15m statuscount=1)$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
-export PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")> '
+base_color='\[[48;5;24m\]'
+stripe_one_col='\[[48;5;30m[38;5;24m\]'
+stripe_two_col='\[[48;5;36m[38;5;30m\]'
+end_stripe_col='\[[48;5;0m[38;5;36m\]'
+
+export PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'$base_color' '$stripe_one_col'⮀'$stripe_two_col'⮀'$end_stripe_col'⮀\[[0m\]'
 
 cd `cat ~/.prev_dir`
 cat /dev/null > ~/.prev_dir
