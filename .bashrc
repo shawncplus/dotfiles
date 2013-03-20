@@ -1,6 +1,8 @@
 # .bashrc
 export EDITOR="vim"
 
+set -o vi
+
 for i in ~/completion/*; do
 	. $i
 done
