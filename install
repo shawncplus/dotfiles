@@ -13,3 +13,5 @@ mkdir $HOME/.node-completion
 
 mkdir $HOME/repos
 git clone git://github.com/erikw/tmux-powerline.git $HOME/repos/tmux-powerline
+
+echo 'WARNING: Remember to updated the .gitconfig with your info!'
