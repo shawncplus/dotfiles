@@ -1,63 +1,72 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Shawn Biddle's dotfiles by shawncplus</title>
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Shawn Biddle's dotfiles</h1>
+        <p></p>
 
-  <title>dotfiles</title>
-  <meta name="description" content="">
+        <p class="view"><a href="https://github.com/shawncplus/dotfiles">View the Project on GitHub <small>shawncplus/dotfiles</small></a></p>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-</head>
+        <ul>
+          <li><a href="https://github.com/shawncplus/dotfiles/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/shawncplus/dotfiles/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/shawncplus/dotfiles">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>tmux, Vim and BASH configs.</h3>
 
-<body>
+<p>My BASH/Vim/tmux configs are organized into modularized directories that make it a lot easier to find what I'm looking for.</p>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">dotfiles</h1>
-    </header>
-    <div id="container">
-      <p class="tagline"></p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/shawncplus/dotfiles/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/shawncplus/dotfiles/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/shawncplus/dotfiles" class="code">fork dotfiles on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h3>Screen, Vim and BASH configs.</h3>
+<h3>Installing</h3>
 
-<p>My BASH/Vim configs are organized into modularized directories that make it a lot easier to find what I'm looking for.</p>
-        </article>
-      </div>
+<ol>
+<li>Clone the repo into your home directory</li>
+<li><code>git submodule init &amp;&amp; git submodule update</code></li>
+<li>Run ./install (This will move any previous .dotfiles to .file.old (.bashrc -&gt; .bashrc.old for example)</li>
+<li>
+<strong>Important</strong>: Update your ~/.gitconfig otherwise you'll be committing as me. You don't want that.</li>
+<li>Install the powerline font <a href="https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation">https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation</a>
+</li>
+</ol><h3>Using</h3>
+
+<ul>
+<li>For tmux it's setup to have GNU screen keybindings, that is, ctrl-a is the leader key, not ctrl-b.</li>
+<li>The BASH setup is as follows: aliases and functions are in <code>~/.bash/</code> and are separated by purpose into different files in <code>~/.bash/alias_lib/</code> and <code>~/.bash/func_lib/</code> respectively.</li>
+<li>Input mode in BASH is set to vi</li>
+<li>See ~/.vim/bundle/ for the Vim plugins I have installed</li>
+</ul><h3>More info</h3>
+
+<ul>
+<li>Vim/screen training videos: <a href="http://youtube.com/sabiddle">youtube.com/sabiddle</a>
+</li>
+<li>My website: <a href="http://shawnbiddle.com">shawnbiddle.com</a>
+</li>
+<li>Questions/comments either as a Github issue on the repo or <code>shawncplus AT gmail.com</code>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/shawncplus">shawncplus</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/shawncplus" class="avatar"><img src="https://secure.gravatar.com/avatar/d54f65ad3ff9ee1c9c033a403d4b5f9f?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" height="48"/></a> <a href="https://github.com/shawncplus">shawncplus</a> maintains <a href="https://github.com/shawncplus/dotfiles">dotfiles</a></p>
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/shawncplus/dotfiles/tarball/master" class="tar">tar</a><a href="https://github.com/shawncplus/dotfiles/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-            <script type="text/javascript">
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -68,5 +77,5 @@
             } catch(err) {}
           </script>
 
-</body>
+  </body>
 </html>
