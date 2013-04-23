@@ -1,6 +1,13 @@
 #!/bin/bash
+echo "Old .dotfiles moved to .file.old\n";
+
+INSTALLDIR=${1:-$HOME}
+
 for i in .bash  .bash_logout  .bashrc  bin  completion  .gitconfig  .screenrc  .vim  .vimrc .tmux.conf .tmux-powerlinerc
 do
-	rm -rf $HOME/$i;
-	ln -s $PWD/$i $HOME/$i;
+	mv $INSTALLDIR/$i $INSTALLDIR/$i.old 2> /dev/null
+	ln -s $PWD/$i $INSTALLDIR/$i;
 done;
+
+mkdir $HOME/repos
+git clone git://github.com/erikw/tmux-powerline.git $HOME/repos/tmux-powerline

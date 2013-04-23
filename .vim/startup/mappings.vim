@@ -21,6 +21,7 @@ map <C-Tab> :tabnext<CR>
 imap <C-S-Tab> <ESC>:tabprevious<CR>
 imap <C-Tab> <ESC>:tabnext<CR>
 noremap <F7> :set expandtab!<CR>
+nmap <Leader>h :tabnew %:h<CR>
 
 "custom comma motion mapping
 nmap di, f,dT,

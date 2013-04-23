@@ -38,7 +38,6 @@ fi
 
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
-		"${TMUX_POWERLINE_SEPARATOR_LEFT_BOLD}" \
 		#"earthquake 3 0" \
 		#"mailcount 9 255" \
 		#"now_playing 234 37" \
@@ -49,8 +48,9 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		#"weather 37 255" \
 		#"rainbarf 0 0" \
 		#"xkb_layout 125 117" \
-		"lan_ip 235 248" \
-		"date_day 235 248 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+#		"lan_ip 235 248" \
+		"date_day 235 248" \
+#	${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 		"date 242 253" \
 		"time 251 235" \
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \

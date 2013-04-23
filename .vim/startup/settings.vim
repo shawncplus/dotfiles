@@ -16,6 +16,7 @@ if &diff
 	set wrap
 endif
 let &scrolloff=999-&scrolloff
+set smartcase
 
 set completeopt=menu
 set mousemodel=popup

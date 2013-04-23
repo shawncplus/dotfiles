@@ -6,6 +6,4 @@ augroup AutoMkdir
 	autocmd  BufWritePre  *  :call EnsureDirExists()
 augroup END
 
-command -nargs=? Qa :qa
-
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
