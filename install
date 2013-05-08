@@ -28,8 +28,8 @@ cp $PWD/.gitconfig $INSTALLDIR/.gitconfig
 sed -i "s/%%GITNAME%%/$git_name/" $INSTALLDIR/.gitconfig
 sed -i "s/%%GITEMAIL%%/$git_email/" $INSTALLDIR/.gitconfig
 
-if [ ! -d $HOME/.node-completion ]; then
-	mkdir $HOME/.node-completion
+if [ ! -d $INSTALLDIR/.node-completion ]; then
+	mkdir $INSTALLDIR/.node-completion
 fi
 
 if [ ! -d $HOME/repos ]; then

@@ -1,6 +1,6 @@
 [user]
-  name = Shawn Biddle
-  email = shawncplus@gmail.com
+  name = %%GITNAME%%
+  email = %%GITEMAIL%%
 [diff]
   external = git_diff_wrapper
 [pager]
