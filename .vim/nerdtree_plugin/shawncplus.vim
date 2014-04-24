@@ -1,12 +1,12 @@
 if exists("g:loaded_nerdtree_custom_shawncplus")
 	finish
 endif
-let g:loaded_nerdtree_customshawncplus = 1
+let g:loaded_nerdtree_custom_shawncplus = 1
 
 call NERDTreeAddKeyMap({
 	\ 'key': 'gG',
 	\ 'callback': 'NERDTreeCustomMapsOpenCurrentGitRoot',
-	\ 'quickhelpText': 'Open git root' })
+	\ 'quickhelpText': 'Open current git root' })
 
 function! NERDTreeCustomMapsOpenCurrentGitRoot()
 	let gitroot = finddir('.git', b:NERDTreeRoot.path.str() . '/;') . '/'
