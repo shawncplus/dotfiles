@@ -3,7 +3,7 @@
 	url = git://github.com/vim-scripts/Conque-Shell.git
 [submodule ".vim/bundle/phpcomplete.vim"]
 	path = .vim/bundle/phpcomplete.vim
-	url = git://github.com/vim-scripts/phpcomplete.vim.git
+	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule ".vim/bundle/zencoding.vim"]
 	path = .vim/bundle/zencoding.vim
 	url = git://github.com/vim-scripts/ZenCoding.vim.git

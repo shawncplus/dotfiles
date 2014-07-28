@@ -29,7 +29,7 @@ stripe_one_col='\[[48;5;30m[38;5;24m\]'
 stripe_two_col='\[[48;5;36m[38;5;30m\]'
 end_stripe_col='\[[48;5;0m[38;5;36m\]'
 
-export PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'$base_color' '$stripe_one_col'⮀'$stripe_two_col'⮀'$end_stripe_col'⮀\[[0m\]'
+export PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'$base_color' '$stripe_one_col' '$stripe_two_col' '$end_stripe_col' \[[0m\]'
 
 cd `cat ~/.prev_dir`
 cat /dev/null > ~/.prev_dir
