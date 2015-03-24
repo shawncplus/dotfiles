@@ -76,3 +76,13 @@ imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i
 imap <leader>[ []<ESC>i
 
+" replace string contents with recently copied text
+nmap <Leader>r" "_di"P
+nmap <Leader>c" "_di"Pa
+nmap <Leader>r' '_di'P
+nmap <Leader>c' '_di'Pa
+
+autocmd FileType twig imap <leader>a[ [{[  ]}]<ESC>Bhi
+
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk

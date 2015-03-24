@@ -1,0 +1,20 @@
+{
+	"name": "sbiddle",
+	"groups": {
+		"information:additional":    { "fg": "gray9", "bg": "gray4", "attrs": [] },
+		"information:regular":       { "fg": "gray10", "bg": "gray4", "attrs": [] },
+		"information:highlighted":   { "fg": "white", "bg": "gray4", "attrs": ["bold"] },
+		"information:priority":      { "fg": "brightyellow", "bg": "mediumorange", "attrs": [] },
+		"hostname":                  { "fg": "black", "bg": "gray10", "attrs": ["bold"] },
+		"user":                      { "fg": "brightcyan", "bg": "darkestblue", "attrs": ["bold"] },
+		"branch":                    { "fg": "gray9", "bg": "gray2", "attrs": [] },
+		"branch_dirty":              { "fg": "black", "bg": "orangered", "attrs": [] },
+		"branch_clean":              { "fg": "gray9", "bg": "gray2", "attrs": [] },
+		"branch:divider":            { "fg": "gray7", "bg": "gray2", "attrs": [] },
+		"cwd":                       "information:additional",
+		"cwd:current_folder":        "information:highlighted",
+		"cwd:divider":               { "fg": "gray7", "bg": "gray4", "attrs": [] },
+        "promptline": { "fg": "white", "bg": "darkestblue", "attrs": ["bold"] },
+        "blank": { "fg": "black", "bg": "black", "attrs": [] }
+	}
+}

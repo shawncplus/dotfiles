@@ -1,0 +1,29 @@
+{
+	"segments": {
+		"right": [
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true,
+                    "tz": "America/New_York"
+				},
+                "before": "L|"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				},
+                "before": "S|"
+			},
+			{
+				"function": "powerline.segments.common.net.hostname"
+			}
+		]
+	}
+}
+

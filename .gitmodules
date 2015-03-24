@@ -34,9 +34,12 @@
 [submodule ".vim/bundle/badwolf.git"]
 	path = .vim/bundle/badwolf.git
 	url = https://github.com/sjl/badwolf.git
-[submodule ".vim/bundle/powerline.git"]
-	path = .vim/bundle/powerline.git
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule ".vim/bundle/skittles_berry.git"]
 	path = .vim/bundle/skittles_berry.git
 	url = git://github.com/shawncplus/skittles_berry.git
+[submodule ".vim/bundle/vim-twig"]
+	path = .vim/bundle/vim-twig
+	url = https://github.com/evidens/vim-twig
+[submodule ".vim/bundle/vim-javascript"]
+	path = .vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git

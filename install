@@ -1,44 +1,71 @@
 #!/bin/bash
-echo "Old .dotfiles moved to .file.old";
-
 INSTALLDIR=${1:-$HOME}
 
-for i in .bash  .bash_logout  .bashrc  bin  completion .tmux.conf .tmux-powerlinerc
+if [ "$1" == "-h" ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
+    echo "$0 <dotfiles install dir>"
+    echo "Existing dotfiles will be moved to <filename>.old"
+    exit
+fi
+
+for i in .bash  .bash_logout  .bashrc  bin  completion 
 do
 	mv $INSTALLDIR/$i $INSTALLDIR/$i.old 2> /dev/null
 	ln -s $PWD/$i $INSTALLDIR/$i;
 done;
 
-echo -n "Do you want to use my vim configs? [n/Y]"
+echo -n "Do you want to use my vim configs? [N/y]"
 read -n 1 use_vim_configs
 
-if [ "$use_vim_configs" == "Y" ]; then
-	ln -s $PWD/.vim $INSTALLDIR/.vim
-	ln -s $PWD/.vimrc $INSTALLDIR/.vimrc
+if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
+    mv $INSTALLDIR/.vim $INSTALLDIR/.vim.old
+    mv $INSTALLDIR/.vimrc $INSTALLDIR/.vimrc.old
+	ln -s $PWD/.vim $INSTALLDIR/.vim 2> /dev/null
+	ln -s $PWD/.vimrc $INSTALLDIR/.vimrc 2> /dev/null
 fi
 echo
 
-echo "Git config settings"
-echo -n "Name: "
-read git_name
-echo -ne "\nEmail: "
-read git_email
+echo -en "\nDo you want to use my git configs? [N/y]"
+read -n 1 use_git_configs
 
-cp $PWD/.gitconfig $INSTALLDIR/.gitconfig
-sed -i "s/%%GITNAME%%/$git_name/" $INSTALLDIR/.gitconfig
-sed -i "s/%%GITEMAIL%%/$git_email/" $INSTALLDIR/.gitconfig
+if [ "$use_git_configs" == "Y" ] || [ "$use_git_configs" == "y" ]; then
+    echo -e "\nGit config settings"
+    echo -n "Name: "
+    read git_name
+    echo -ne "\nEmail: "
+    read git_email
+
+    cp $PWD/.gitconfig $INSTALLDIR/.gitconfig
+    sed -i "s/%%GITNAME%%/$git_name/" $INSTALLDIR/.gitconfig
+    sed -i "s/%%GITEMAIL%%/$git_email/" $INSTALLDIR/.gitconfig
+fi
 
 if [ ! -d $INSTALLDIR/.node-completion ]; then
 	mkdir $INSTALLDIR/.node-completion
 fi
 
-if [ ! -d $HOME/repos ]; then
-	mkdir $HOME/repos
+echo -en "\nDo you want to use my tmux configs? [N/y]"
+read -n 1 use_tmux_configs
+
+if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
+    if [ ! -d $HOME/repos ]; then
+        mkdir $HOME/repos
+    fi
+
+    if [ ! -d $HOME/repos/powerline ]; then
+        echo -e "\nCloning shawncplus's powerline fork"
+        git clone -b feature/shawncplus --single-branch git://github.com/shawncplus/powerline.git $HOME/repos/powerline
+    fi
+
+	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
+	mv $INSTALLDIR/.tmux.conf $INSTALLDIR/.tmux.conf.old 2> /dev/null
+    ln -s $PWD/.config $INSTALLDIR/.config
+    ln -s $PWD/.tmux.conf $INSTALLDIR/.tmux.conf
+    mkdir -p $HOME/.local/bin/
+    pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
+    powerline-daemon -q
 fi
 
-if [ ! -d $HOME/repos/tmux-powerline ]; then
-	git clone git://github.com/erikw/tmux-powerline.git $HOME/repos/tmux-powerline
-fi
-
-echo "Initializing submodules..."
+echo -e "\nInitializing submodules..."
 git submodule init && git submodule update
+
+echo "Done. Conflicting existing dotfiles were moved to <file>.old"

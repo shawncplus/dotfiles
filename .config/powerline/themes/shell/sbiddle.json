@@ -1,0 +1,40 @@
+{
+    "segments": {
+        "above": [
+            {
+                "left": [
+                    {
+                        "name": "user",
+                        "function": "powerline.segments.common.env.user",
+                        "priority": 30
+                    },
+                    {
+                        "function": "powerline.segments.common.vcs.branch",
+                        "args": {
+                            "status_colors": true,
+                            "ignore_statuses": ["U"]
+                        }
+                    },
+                    {
+                        "name": "cwd",
+                        "function": "powerline.segments.common.env.cwd"
+                    }
+                ]
+            }
+        ],
+        "left": [
+            {
+                "type": "string",
+                "contents": ">",
+                "highlight_groups": ["promptline"],
+                "draw_soft_divider": false
+            },
+            {
+                "type": "string",
+                "contents": "",
+                "highlight_groups": ["blank"],
+                "draw_hard_divider": false
+            }
+        ]
+    }
+}

@@ -13,4 +13,7 @@ alias less='less -R'
 
 
 alias follow=". ~/bin/follow"
+
+alias vdb="vim -c 'python debugger.run()'"
+alias tm='tmux attach'
 # vim: set syn=sh :

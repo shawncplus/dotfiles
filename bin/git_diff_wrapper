@@ -1,3 +1,6 @@
 #!/bin/sh
-echo $*
-vimdiff "$1" "$2"
+if [ "$2" = "/dev/null" ]; then
+	vim $1
+else
+	vimdiff "$1" "$2"
+fi

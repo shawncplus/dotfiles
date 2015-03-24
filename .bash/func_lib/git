@@ -2,9 +2,9 @@
 function gdm() {
 	pwd
 	git diff master... --name-status | \
-		sed -e "s/^A/ [1;32m+ [0m/" | \
-		sed -e "s/^M/ [1;33m∆ [0m/" | \
-		sed -e "s/^D/ [1;31m- [0m/"
+		sed -e "s/^A/ [1;32mA [0m/" | \
+		sed -e "s/^M/ [1;33mM [0m/" | \
+		sed -e "s/^D/ [1;31mD [0m/"
 }
 
 
