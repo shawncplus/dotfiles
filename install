@@ -53,7 +53,7 @@ if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
 
     if [ ! -d $HOME/repos/powerline ]; then
         echo -e "\nCloning shawncplus's powerline fork"
-        git clone -b feature/shawncplus --single-branch git://github.com/shawncplus/powerline.git $HOME/repos/powerline
+        git clone -b feature/shawncplus https://github.com/shawncplus/powerline.git $HOME/repos/powerline
     fi
 
 	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
