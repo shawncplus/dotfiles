@@ -62,6 +62,7 @@ if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
     ln -s $PWD/.tmux.conf $INSTALLDIR/.tmux.conf
     mkdir -p $HOME/.local/bin/
     pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
+    pip install --user pytz
 fi
 
 echo -e "\nInitializing submodules..."
