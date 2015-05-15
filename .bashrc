@@ -24,12 +24,6 @@ fi
 
 export PATH=$PATH":/home/$USER/bin/:/home/$USER/.local/bin"
 
-dash_color='\[[38;5;178m[1m\]'
-base_color='\[[38;5;24m\]'
-stripe_one_col='\[[48;5;0m[38;5;30m[1m\]'
-stripe_two_col='\[[48;5;0m[38;5;36m[1m\]'
-end_stripe_col='\[[48;5;0m[38;5;42m[1m\]'
-
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1

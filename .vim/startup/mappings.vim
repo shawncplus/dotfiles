@@ -23,6 +23,9 @@ imap <C-Tab> <ESC>:tabnext<CR>
 noremap <F7> :set expandtab!<CR>
 nmap <Leader>h :tabnew %:h<CR>
 
+"turn off search highlighting
+nmap <C-n> :noh<CR>
+
 "custom comma motion mapping
 nmap di, f,dT,
 nmap ci, f,cT,

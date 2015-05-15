@@ -2,7 +2,8 @@
 
 alias clear='echo -e "\e[2J"'
 alias ls='ls --color=always'
-alias lf='ls -Arthop'
+alias ll='ls -AFlh --group-directories-first'
+alias lf='ll -rt'
 alias l='lf'
 alias nl="nl -ba"
 
@@ -16,4 +17,5 @@ alias follow=". ~/bin/follow"
 
 alias vdb="vim -c 'python debugger.run()'"
 alias tm='tmux attach'
-# vim: set syn=sh :
+alias pyg='pygmentize -f 256 -O style=monokai'
+# vim: set ft=sh :

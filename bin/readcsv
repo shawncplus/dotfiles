@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo sh -c "column -s, -t < ${1}" | less -#5 -N -S
