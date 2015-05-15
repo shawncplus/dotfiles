@@ -11,6 +11,8 @@
   st = status -a
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
   ch = checkout -
+  wslog = log --ignore-space-at-eol -p -w -b
+  wsdiff = diff --ignore-space-at-eol -w -b --no-ext-diff
 [merge]
     tool = threesome
 [mergetool "threesome"]
