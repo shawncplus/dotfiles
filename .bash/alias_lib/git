@@ -1,7 +1,7 @@
 # git stuff
 alias gcm='git bulk checkout master'
 alias gbs='git bulk status'
-alias gs='git status'
+alias gs='git status -sb'
 alias gitmerge='git mergetool -t vimdiff'
 alias get='git pull'
 

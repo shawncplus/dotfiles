@@ -1,0 +1,7 @@
+alias cm='cd /srv/coachmeplus/cmplus/'
+alias sites='cd /srv/coachmeplus/virtuvia_sites/'
+alias sticket='date && time ./bin/startdev -t'
+alias sclient='date && time ./bin/startdev -c'
+alias m='git checkout master && title master'
+alias app='vim /srv/coachmeplus/cmplus/sites/development/config/app.yml'
+alias red='vi-redmine'

@@ -1,0 +1,2 @@
+alias genphptags="ctags  --fields=+aimS --languages=php --langmap=php:.inc.php --file-scope=no -f ~/.vim/tags/cmplus -R /srv/coachmeplus/cmplus/"
+alias cphp="php -dxdebug.cli_color=2"

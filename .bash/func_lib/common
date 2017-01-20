@@ -20,4 +20,9 @@ function mkcd()
 	'mkdir' $*
 	'cd' ${@: -1}
 }
+
+function title()
+{
+    printf "\033k$1\033\\"
+}
 # vim: set syn=sh :

@@ -3,7 +3,7 @@
 # Arg 1: repos path, Arg 2: tag path, Arg 3: deployed file path
 # Ex: $HOME/repos/app-*, Ex: $HOME/.vim/tags/foo, Ex: /var/www/
 while true; do
-    if inotifywait -e move,create,delete,modify --exclude=".*sw[px]|4913|.git/.*" -r $1; then
-        ctags  --fields=+aimS --languages=php --langmap=php:.inc.php --file-scope=no -f $2 -R $3
+    if inotifywait -e move,create,delete,modify --exclude=".*sw[px]|4913|.git/.*|dashboard.php|cache/.*|log/.*" -r /srv/coachmeplus/cmplus/; then
+        ctags  --fields=+aimS --languages=php --langmap=php:.inc.php --file-scope=no -f ~/.vim/tags/cmplus -R /srv/coachmeplus/cmplus/
     fi
 done

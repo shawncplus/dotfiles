@@ -14,12 +14,18 @@ set cmdheight=2
 set nowrap
 if &diff
 	set wrap
+    color skittles_berry
 endif
 set diffopt+=iwhite
-let &scrolloff=999-&scrolloff
+"let &scrolloff=100
+"let &sidescrolloff=30
 set smartcase
-set relativenumber
+"set relativenumber
 set nowritebackup
+set breakindent breakindentopt=shift:2,sbr showbreak=→ breakat-=- breakat-=:
+set cpoptions=aABceFsn
+set cocu=
+set conceallevel=2
 
 set completeopt=menu
 set mousemodel=popup
@@ -37,11 +43,11 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set foldcolumn=1
-set cc=+1,+2
+set cc=+1,+2,81,121
 
 set linespace=0
 set history=1000
-set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
+set list listchars=tab:› ,trail:-,extends:>,precedes:<
 
 set laststatus=2
 set ffs=unix,dos
@@ -51,7 +57,8 @@ set ttym=xterm2
 
 set wrap
 
-set tags=./tags
+set tags=./tags,~/.vim/tags/cmplus
+set viminfo+=!
 
 if version > 720
 	set undofile
@@ -66,6 +73,10 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+set t_ZH=[3m
+set t_ZR=[23m
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 
 let g:vdebug_options= {
 	\    "port" : 9000,
@@ -97,6 +108,21 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 let g:indent_guides_space_guides = 1
 let g:indent_guides_guide_size = 1
-"
+
 let g:gitgutter_sign_modified = '≈ '
 let g:gitgutter_sign_removed = '⌐ '
+
+let g:tagbar_autopreview = 0
+let g:tagbar_width = 60
+if &diff
+    set wrap linebreak
+    set conceallevel=0
+else
+    autocmd BufEnter set cocu= conceallevel=2
+endif
+
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+
+let g:ycm_auto_trigger = 1
+let g:ycm_collect_identifiers_from_tags_files = 1

@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/srv/coachmeplus/cmplus/sites/development/config'
+let g:netrw_dirhist_2='/srv/coachmeplus/virtuvia_sites/kentucky/config'
+let g:netrw_dirhist_3='/home/sbiddle/repos/vim-classes'
+let g:netrw_dirhist_4='/srv/coachmeplus/cmplus'
+let g:netrw_dirhist_5='/srv/coachmeplus/cmplus/bower_components'
+let g:netrw_dirhist_6='/srv/coachmeplus/cmplus'

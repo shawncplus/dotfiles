@@ -22,7 +22,16 @@ if [ -f /home/$USER/.bash/aliases ]; then
 	. /home/$USER/.bash/aliases
 fi
 
-export PATH=$PATH":/home/$USER/bin/:/home/$USER/.local/bin"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -d "$HOME/repos/dev-scripts" ]; then
+    PATH=$PATH:$HOME/repos/dev-scripts
+fi
+
+export PATH=$PATH":/home/$USER/bin/:/home/$USER/.local/bin:$GOPATH/bin:$HOME/repos/node-v4.2.2-linux-x64/bin"
+export HISTSIZE=9999
+export HISTFILESIZE=9999
+export GOPATH=$HOME
 
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
@@ -34,8 +43,9 @@ cd `cat ~/.prev_dir`
 cat /dev/null > ~/.prev_dir
 
 eval "$(dircolors ~/.bash/.DIR_COLORS)"
+eval "$(direnv hook bash)"
 
-TERM=xterm-256color
+export TERM=xterm-256color-italic
 
 # {{{
 # Node Completion - Auto-generated, do not touch.

@@ -1,7 +1,7 @@
 " Unmap the arrow keys
 no <down> ddp
-no <left> <Nop>
-no <right> <Nop>
+nno <left> <<
+nno <right> >>
 no <up> ddkP
 ino <down> <Nop>
 ino <left> <Nop>
@@ -22,6 +22,7 @@ imap <C-S-Tab> <ESC>:tabprevious<CR>
 imap <C-Tab> <ESC>:tabnext<CR>
 noremap <F7> :set expandtab!<CR>
 nmap <Leader>h :tabnew %:h<CR>
+nmap <Leader>H :e %:h<CR>
 
 "turn off search highlighting
 nmap <C-n> :noh<CR>

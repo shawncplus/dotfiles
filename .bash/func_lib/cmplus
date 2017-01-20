@@ -1,0 +1,6 @@
+function c()
+{
+    git checkout CM-$1
+    title CM-$1
+}
+# vim: set syn=sh :

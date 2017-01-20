@@ -1,5 +1,5 @@
 " PHP Stuff
-autocmd FileType php let php_folding = 1
+autocmd FileType php let php_folding = 0
 autocmd FileType php let php_parent_error_close = 1
 autocmd FileType php let php_parent_error_open = 1
 autocmd FileType php let php_large_files = 0

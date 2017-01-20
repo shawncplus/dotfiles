@@ -11,11 +11,16 @@ alias p='pushd'
 alias o='popd'
 alias d='dirs'
 alias less='less -R'
+alias t='task'
 
 
 alias follow=". ~/bin/follow"
 
-alias vdb="vim -c 'python debugger.run()'"
-alias tm='tmux attach'
+alias fim='vim -p $(fzf -i -m)'
+alias irssi=TERM='screen-256color irssi'
 alias pyg='pygmentize -f 256 -O style=monokai'
+alias tm='tmux attach'
+alias vdb="vim -c 'python debugger.run()'"
+
+alias gtab="google-chrome --new-tab"
 # vim: set ft=sh :
